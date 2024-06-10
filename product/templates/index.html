@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <header>
+      <h1>Omurbek - Shop</h1>
+      <ul>
+        <li><a href="#tow">Товары</a></li>
+        <li><a href="#con">Контакты</a></li>
+        <li><a href="#onas">О нас</a></li>
+      </ul>
+    </header>
+    <main>
+      <div class="wrapper">
+        <h1 class="padding" id="tow">Товары</h1>
+        <div class="cards">
+          <div class="card">
+            <img src="{%  static 'image/image.png' %}" alt="" class="img" width="300" />
+            <div class="width">
+              <h1 class="title">Сандали</h1>
+              <p class="text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </p>
+              <p class="price">300$</p>
+            </div>
+          </div>
+
+          {% for i in product %}
+          <div class="card">
+            <img src="{{i.image.url}}" alt="" class="img" width="300" />
+            <div class="width">
+              <h1 class="title">{{i.title}}</h1>
+              <p class="text">
+                {{i.text}}
+              </p>
+              <p class="price">{{i.price}}$</p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="info" id="onas">
+        <h1>Omurbek - Shop</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          <br />Provident soluta modi voluptatem quibusdam atque nostrum maxime
+          illo libero,<br />
+          aspernatur aliquam excepturi officia architecto accusantium, quas<br />
+          nulla ratione consequuntur? Porro, recusandae!<br />
+        </p>
+      </div>
+    </main>
+    <footer id="con">
+      <h1>Выполнил Омурбек из группы ПКС4-21</h1>
+    </footer>
+  </body>
+</html>
